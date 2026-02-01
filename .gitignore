@@ -1,0 +1,39 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.egg-info/
+dist/
+build/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# OS/Editor
+.DS_Store
+Thumbs.db
+.vscode/
+
+# Streamlit
+.streamlit/
+
+# Model artifacts (choose one)
+# Option A: ignore models (recommended if file is large)
+models/*.pkl
+models/*.joblib
+
+# Keep small JSON/metrics/images
+!models/*.json
+!models/*.png
+
+# Data (choose one)
+# Option A: ignore data (recommended for Kaggle datasets)
+data/*.csv
+data/*.parquet
+data/*.xlsx
