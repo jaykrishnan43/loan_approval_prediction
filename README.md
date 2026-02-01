@@ -2,9 +2,7 @@
 
 Streamlit app for loan approval prediction using an XGBoost model with simple policy rules.
 
-## Rules
-- Reject if CIBIL score < 650
-- Reject if EMI income ratio > 0.7
+
 
 ## Run locally
 ```powershell
