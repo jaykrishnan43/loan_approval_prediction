@@ -25,7 +25,7 @@ Thumbs.db
 
 # Model artifacts (choose one)
 # Option A: ignore models (recommended if file is large)
-models/*.pkl
+# models/*.pkl
 models/*.joblib
 
 # Keep small JSON/metrics/images
