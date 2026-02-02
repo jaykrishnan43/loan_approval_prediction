@@ -64,7 +64,7 @@ try:
     model, cols = load_artifacts()
 except Exception as e:
     st.error("Model files not found or failed to load.")
-    st.write("Make sure you ran: python -m src.train")
+    st.write("Make sure you ran: python -m src.train or ran the training notebook.")
     st.code("models/xgb_model.pkl\nmodels/feature_columns.json")
     st.exception(e)
     st.stop()
@@ -114,17 +114,15 @@ if submitted:
     # Final decision (hard policies first)
     if cibil_score < 650:
         decision = "Rejected"
-        reject_reason = "Rejected by policy: CIBIL score < 650"
     elif emi_income_ratio > 0.7:
         decision = "Rejected"
-        reject_reason = "Rejected by policy: EMI income ratio > 0.7"
     else:
-        decision = "Approved" if final_score >= 0.5 else "Rejected"
-        reject_reason = "" if decision == "Approved" else "Rejected by model + policy score"
+        APPROVAL_THRESHOLD = 0.60
+        decision = "Approved" if final_score >= APPROVAL_THRESHOLD else "Rejected"
 
     st.subheader("Results")
 
-    # Show only what you asked: loan amount, tenure, income ratio, and decision
+    # Show only: loan amount, tenure, income ratio, and decision
     result_df = pd.DataFrame(
         [{
             "Loan Amount": raw["loan_amount"],
@@ -140,5 +138,3 @@ if submitted:
         st.success("Approved")
     else:
         st.warning("Rejected")
-        if reject_reason:
-            st.caption(reject_reason)
