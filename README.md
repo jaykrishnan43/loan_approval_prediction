@@ -19,7 +19,7 @@ notebooks/02_model_training.ipynb
 
 notebooks/03_evaluation_shap.ipynb
 
-## Deploy (Streamlit Community Cloud) ==  https://loanapprovalprediction-11.streamlit.app/
+## Deploy (Streamlit Community Cloud) ==  https://loanapprovalprediction-22.streamlit.app/
 
 ## Repo: jaykrishnan43/loan_approval_prediction
 
