@@ -37,3 +37,4 @@ models/*.joblib
 data/*.csv
 data/*.parquet
 data/*.xlsx
+models/logreg_model.pkl
