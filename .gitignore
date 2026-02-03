@@ -34,6 +34,7 @@ models/*.joblib
 
 # Data (choose one)
 # Option A: ignore data (recommended for Kaggle datasets)
-data/*.csv
+#data/*.csv
 data/*.parquet
 data/*.xlsx
+models/logreg_model.pkl
